@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="background">#00162C</color>
+    <color name="vermelho">#EA2427</color>
+    <color name="branco">#FFFFFF</color>
+    <color name="textoEmailPassword">#1F2D3D</color>
+    <color name="remember">#47525E</color>
+    <color name="textoCreatAccount">#343F4B</color>
+    <color name="linha">#C0CCDA</color>
+</resources>
