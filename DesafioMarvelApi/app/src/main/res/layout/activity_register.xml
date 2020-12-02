@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".LoginActivity">
+
+    <View
+        android:id="@+id/viewBase"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="23dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/vermelho"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewCirculo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/round"
+        app:layout_constraintEnd_toEndOf="@+id/viewBase"
+        app:layout_constraintStart_toStartOf="@+id/viewBase"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/create"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCirculo"
+        app:layout_constraintEnd_toEndOf="@+id/viewCirculo"
+        app:layout_constraintStart_toStartOf="@+id/viewCirculo"
+        app:layout_constraintTop_toTopOf="@+id/viewCirculo" />
+
+    <View
+        android:id="@+id/viewRegister"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="99dp"
+        android:background="@drawable/shape"
+        app:layout_constraintEnd_toEndOf="@+id/viewBase"
+        app:layout_constraintStart_toStartOf="@+id/viewBase"
+        app:layout_constraintTop_toTopOf="@+id/viewBase" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/name"
+        android:textColor="@color/textoEmailPassword"
+        android:textColorHint="@color/vermelho"
+        app:boxBackgroundColor="@color/branco"
+        app:boxStrokeColor="@color/linha"
+        app:errorEnabled="true"
+        app:hintTextColor="@color/vermelho"
+        app:layout_constraintEnd_toEndOf="@+id/viewRegister"
+        app:layout_constraintStart_toStartOf="@+id/viewRegister"
+        app:layout_constraintTop_toTopOf="@id/viewRegister">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextNameRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtEmailRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/email"
+        android:textColor="@color/textoEmailPassword"
+        android:textColorHint="@color/vermelho"
+        app:boxBackgroundColor="@color/branco"
+        app:boxStrokeColor="@color/linha"
+        app:errorEnabled="true"
+        app:hintTextColor="@color/vermelho"
+        app:layout_constraintEnd_toEndOf="@+id/viewRegister"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/viewRegister"
+        app:layout_constraintTop_toBottomOf="@+id/txtName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmaiRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtPasswordRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/password"
+        android:textColor="@color/textoEmailPassword"
+        android:textColorHint="@color/vermelho"
+        app:boxBackgroundColor="@color/branco"
+        app:boxStrokeColor="@color/linha"
+        app:errorEnabled="true"
+        app:hintTextColor="@color/vermelho"
+        app:layout_constraintEnd_toEndOf="@+id/viewRegister"
+        app:layout_constraintStart_toStartOf="@+id/viewRegister"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailRegister">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPasswordRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/vermelho"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="@+id/viewRegister"
+        app:layout_constraintEnd_toEndOf="@+id/viewRegister"
+        app:layout_constraintStart_toStartOf="@+id/viewRegister" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

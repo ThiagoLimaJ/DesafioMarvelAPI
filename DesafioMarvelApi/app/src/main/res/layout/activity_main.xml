@@ -41,7 +41,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/txtEmailRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -67,7 +67,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout2"
+        android:id="@+id/txtPasswordRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -82,7 +82,7 @@
         android:textColor="@color/textoEmailPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailRegister">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPasswordLogin"
@@ -100,7 +100,7 @@
         android:checked="true"
         android:text="@string/remember"
         app:layout_constraintStart_toStartOf="@+id/viewLogin"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswordRegister" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton"
@@ -113,7 +113,7 @@
         android:text="@string/log_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswordRegister" />
 
     <Button
         style="@style/Widget.MaterialComponents.Button.TextButton"
