@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -42,10 +41,11 @@ class ImagemFullFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val closeBtn = view.findViewById<ImageButton>(R.id.imgClose)
+        view.findViewById<ImageView>(R.id.imgClose).setOnClickListener {
 
-        closeBtn.setOnClickListener {
-            activity?.onBackPressed()
+            val nav = Navigation.findNavController(view)
+            nav.navigate(R.id.action_imagemFullFragment2_to_comicInfoFragment)
+
         }
 
     }
