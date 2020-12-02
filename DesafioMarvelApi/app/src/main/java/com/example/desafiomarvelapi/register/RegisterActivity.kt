@@ -1,14 +1,18 @@
 package com.example.desafiomarvelapi.register
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.text.Html
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.DrawableCompat
 import com.example.desafiomarvelapi.R
 import com.example.desafiomarvelapi.listadequadrinhos.view.ComicsActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -24,7 +28,7 @@ class RegisterActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar!!.title = "Register"
         actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setTitle(Html.fromHtml("<font color='#FFFFFF'>ActionBartitle </font>"))
+        actionBar.setTitle(Html.fromHtml("<font color='#FFFFFF'>Register </font>"))
 
         name = findViewById(R.id.editTextNameRegister)
         email = findViewById(R.id.editTextEmaiRegister)

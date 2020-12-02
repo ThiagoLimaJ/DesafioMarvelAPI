@@ -1,5 +1,6 @@
 package com.example.desafiomarvelapi.quadrinhoinfo.view
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -10,16 +11,23 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.navigation.Navigation
+import com.example.desafiomarvelapi.ImagemFullActivity
 import com.example.desafiomarvelapi.R
 import com.example.desafiomarvelapi.data.model.ComicModel
+import com.example.desafiomarvelapi.listadequadrinhos.view.ComicsListaAdapter
 import com.example.desafiomarvelapi.quadrinhoinfo.repository.ComicRepository
 import com.example.desafiomarvelapi.quadrinhoinfo.viewmodel.ComicViewModel
 import com.squareup.picasso.Picasso
 
 class ComicInfoFragment : Fragment() {
+
+    private var _listaDeComics = mutableListOf<ComicModel>()
+
+    lateinit var _comicAdapter: ComicsListaAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,7 +57,16 @@ class ComicInfoFragment : Fragment() {
             val nav = Navigation.findNavController(view)
             nav.navigate(R.id.action_comicInfoFragment_to_listaFragment)
         }
+
+        view.findViewById<ImageView>(R.id.imageViewComicList).setOnClickListener {
+
+                val nav = Navigation.findNavController(view)
+                nav.navigate(R.id.action_comicInfoFragment_to_imagemFullFragment2)
+
+        }
     }
+
+
 
     @RequiresApi(Build.VERSION_CODES.N)
     private fun exibirResultados(it: ComicModel?) {

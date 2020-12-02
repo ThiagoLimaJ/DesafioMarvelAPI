@@ -10,10 +10,10 @@
     <View
         android:id="@+id/viewBase"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="23dp"
+        android:layout_height="@dimen/dimen_150"
+        android:layout_marginStart="@dimen/dimen_23"
+        android:layout_marginTop="@dimen/dimen_120"
+        android:layout_marginEnd="@dimen/dimen_23"
         android:background="@drawable/shape"
         android:backgroundTint="@color/vermelho"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,9 +22,9 @@
 
     <View
         android:id="@+id/viewCirculo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_150"
+        android:layout_marginTop="@dimen/dimen_50"
         android:background="@drawable/round"
         app:layout_constraintEnd_toEndOf="@+id/viewBase"
         app:layout_constraintStart_toStartOf="@+id/viewBase"
@@ -32,8 +32,8 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_width="@dimen/dimen_96"
+        android:layout_height="@dimen/dimen_96"
         android:src="@drawable/create"
         app:layout_constraintBottom_toBottomOf="@+id/viewCirculo"
         app:layout_constraintEnd_toEndOf="@+id/viewCirculo"
@@ -42,9 +42,9 @@
 
     <View
         android:id="@+id/viewRegister"
-        android:layout_width="0dp"
-        android:layout_height="350dp"
-        android:layout_marginTop="99dp"
+        android:layout_width="@dimen/dimen_0"
+        android:layout_height="@dimen/dimen_350"
+        android:layout_marginTop="@dimen/dimen_99"
         android:background="@drawable/shape"
         app:layout_constraintEnd_toEndOf="@+id/viewBase"
         app:layout_constraintStart_toStartOf="@+id/viewBase"
@@ -52,11 +52,11 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtName"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:layout_marginEnd="@dimen/dimen_16"
         android:hint="@string/name"
         android:textColor="@color/textoEmailPassword"
         android:textColorHint="@color/vermelho"
@@ -78,10 +78,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtEmailRegister"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
         android:hint="@string/email"
         android:textColor="@color/textoEmailPassword"
         android:textColorHint="@color/vermelho"
@@ -104,10 +104,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtPasswordRegister"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
         android:hint="@string/password"
         android:textColor="@color/textoEmailPassword"
         android:textColorHint="@color/vermelho"
@@ -129,11 +129,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSave"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/dimen_0"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/dimen_16"
         android:backgroundTint="@color/vermelho"
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="@+id/viewRegister"
