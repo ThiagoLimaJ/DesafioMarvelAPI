@@ -4,13 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    android:background="@color/background"
+    tools:context=".login.LoginActivity">
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@color/vermelho"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="23dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@color/vermelho"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,65 +29,63 @@
         android:gravity="center"
         android:text="@string/welcome_to_the_marvel_hq_s"
         android:textColor="@color/branco"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <View
         android:id="@+id/viewLogin"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="27dp"
+        android:layout_width="0dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="99dp"
         android:background="@drawable/shape"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtHq"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtEmailRegister"
-        android:layout_width="match_parent"
+        android:id="@+id/txtEmailLogin"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/email"
+        android:textColor="@color/textoEmailPassword"
         android:textColorHint="@color/vermelho"
         app:boxBackgroundColor="@color/branco"
         app:boxStrokeColor="@color/linha"
         app:errorEnabled="true"
         app:hintTextColor="@color/vermelho"
-        android:textColor="@color/textoEmailPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/viewLogin"
+        app:layout_constraintStart_toStartOf="@+id/viewLogin"
         app:layout_constraintTop_toTopOf="@id/viewLogin">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtPasswordRegister"
-        android:layout_width="match_parent"
+        android:id="@+id/txtPasswordLogin"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/password"
+        android:textColor="@color/textoEmailPassword"
         android:textColorHint="@color/vermelho"
         app:boxBackgroundColor="@color/branco"
         app:boxStrokeColor="@color/linha"
         app:errorEnabled="true"
         app:hintTextColor="@color/vermelho"
-        android:textColor="@color/textoEmailPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmailRegister">
+        app:layout_constraintEnd_toEndOf="@+id/viewLogin"
+        app:layout_constraintStart_toStartOf="@+id/viewLogin"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmailLogin">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editTextPasswordLogin"
@@ -93,6 +96,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
+        android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -100,31 +104,31 @@
         android:checked="true"
         android:text="@string/remember"
         app:layout_constraintStart_toStartOf="@+id/viewLogin"
-        app:layout_constraintTop_toBottomOf="@+id/txtPasswordRegister" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswordLogin" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton"
-        android:layout_width="match_parent"
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/vermelho"
         android:text="@string/log_in"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPasswordRegister" />
+        app:layout_constraintEnd_toEndOf="@+id/viewLogin"
+        app:layout_constraintStart_toStartOf="@+id/viewLogin"
+        app:layout_constraintTop_toBottomOf="@+id/txtPasswordLogin" />
 
     <Button
+        android:id="@+id/btnCreateAccount"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/create_account"
+        android:textColor="@color/textoCreatAccount"
+        app:layout_constraintBottom_toBottomOf="@+id/viewLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton"
-        android:textColor="@color/textoCreatAccount"/>
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

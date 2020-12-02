@@ -1,9 +1,12 @@
-package com.example.desafiomarvelapi
+package com.example.desafiomarvelapi.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.desafiomarvelapi.R
+import com.example.desafiomarvelapi.listadequadrinhos.view.ComicsActivity
+import com.example.desafiomarvelapi.register.RegisterActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
@@ -25,7 +28,8 @@ class LoginActivity : AppCompatActivity() {
 
 
         buttonCreateAccount.setOnClickListener(){
-            val intent =Intent(this,RegisterActivity::class.java)
+            val intent =Intent(this,
+                RegisterActivity::class.java)
             startActivity(intent)
         }
 
@@ -46,7 +50,7 @@ class LoginActivity : AppCompatActivity() {
                 password.error = "A senha deve ter pelo menos 6 caracteres"
             }
             else -> {
-                val intent = Intent(this, MarvelActivity::class.java)
+                val intent = Intent(this, ComicsActivity::class.java)
                 startActivity(intent)
                 finish()
             }

@@ -11,4 +11,5 @@
     <color name="textoCreatAccount">#343F4B</color>
     <color name="linha">#C0CCDA</color>
     <color name="circulo">#EFF2F5</color>
+    <color name="preto">#000000</color>
 </resources>
