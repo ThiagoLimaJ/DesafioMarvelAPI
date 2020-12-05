@@ -83,7 +83,7 @@ class ComicInfoFragment : Fragment() {
                 .into(header)
 
             titulo?.text = it.title
-            val date = it.dates[0].date.toString().split("T")
+            val date = it.dates[0].date.split("T")
             data?.text = date[0]
             preco?.text = it.prices[0].price.toString()
             paginas?.text = it.paginas.toString()
