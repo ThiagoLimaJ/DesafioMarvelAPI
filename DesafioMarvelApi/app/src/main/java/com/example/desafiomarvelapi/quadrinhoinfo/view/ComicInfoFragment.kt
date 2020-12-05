@@ -1,6 +1,5 @@
 package com.example.desafiomarvelapi.quadrinhoinfo.view
 
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -15,19 +14,15 @@ import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
 import androidx.navigation.Navigation
-import com.example.desafiomarvelapi.ImagemFullActivity
 import com.example.desafiomarvelapi.R
 import com.example.desafiomarvelapi.data.model.ComicModel
-import com.example.desafiomarvelapi.listadequadrinhos.view.ComicsListaAdapter
 import com.example.desafiomarvelapi.quadrinhoinfo.repository.ComicRepository
 import com.example.desafiomarvelapi.quadrinhoinfo.viewmodel.ComicViewModel
 import com.squareup.picasso.Picasso
 
 class ComicInfoFragment : Fragment() {
 
-    private var _listaDeComics = mutableListOf<ComicModel>()
-
-    lateinit var _comicAdapter: ComicsListaAdapter
+    private lateinit var _url: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,13 +36,14 @@ class ComicInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = arguments?.getInt("id")
+        val capa = view.findViewById<ImageView>(R.id.imageViewComicList)
 
         val viewModel = ViewModelProvider(
             this,
             ComicViewModel.ComicViewModelFactory(ComicRepository())
         ).get(ComicViewModel::class.java)
 
-        id?.let {identificador ->
+        id?.let { identificador ->
             viewModel.obterComic(identificador).observe(viewLifecycleOwner, {
                 exibirResultados(it)
             })
@@ -58,15 +54,12 @@ class ComicInfoFragment : Fragment() {
             nav.navigate(R.id.action_comicInfoFragment_to_listaFragment)
         }
 
-        view.findViewById<ImageView>(R.id.imageViewComicList).setOnClickListener {
-
-                val nav = Navigation.findNavController(view)
-                nav.navigate(R.id.action_comicInfoFragment_to_imagemFullFragment2)
-
+        capa.setOnClickListener {
+            val nav = Navigation.findNavController(view)
+            val bundle = bundleOf("url" to _url, "id" to id)
+            nav.navigate(R.id.action_comicInfoFragment_to_testeFragment3, bundle)
         }
     }
-
-
 
     @RequiresApi(Build.VERSION_CODES.N)
     private fun exibirResultados(it: ComicModel?) {
@@ -78,19 +71,20 @@ class ComicInfoFragment : Fragment() {
         val preco = view?.findViewById<TextView>(R.id.txtPrice)
         val paginas = view?.findViewById<TextView>(R.id.txtPages)
 
-        if(it!=null){
-            var url = "${it.thumbnail.url}.${it.thumbnail.type}"
+        if (it != null) {
+            _url = "${it.thumbnail.url}.${it.thumbnail.type}"
             Picasso.get()
-                .load(url)
+                .load(_url)
                 .into(capa)
 
-            url = "${it.images[0].url}.${it.images[0].type}"
+            val urlHeader = "${it.images[0].url}.${it.images[0].type}"
             Picasso.get()
-                .load(url)
+                .load(urlHeader)
                 .into(header)
 
             titulo?.text = it.title
-            data?.text = it.dates[0].date
+            val date = it.dates[0].date.toString().split("T")
+            data?.text = date[0]
             preco?.text = it.prices[0].price.toString()
             paginas?.text = it.paginas.toString()
             descricao?.text = Html.fromHtml(it.descricao, Html.FROM_HTML_MODE_COMPACT)

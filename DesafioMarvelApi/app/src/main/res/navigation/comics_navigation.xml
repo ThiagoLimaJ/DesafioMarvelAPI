@@ -23,16 +23,16 @@
             android:id="@+id/action_comicInfoFragment_to_listaFragment"
             app:destination="@id/listaFragment" />
         <action
-            android:id="@+id/action_comicInfoFragment_to_imagemFullFragment2"
-            app:destination="@id/imagemFullFragment2" />
+            android:id="@+id/action_comicInfoFragment_to_testeFragment3"
+            app:destination="@id/testeFragment3" />
     </fragment>
     <fragment
-        android:id="@+id/imagemFullFragment2"
-        android:name="com.example.desafiomarvelapi.ImagemFullFragment"
-        android:label="fragment_imagem_full"
-        tools:layout="@layout/fragment_imagem_full" >
+        android:id="@+id/testeFragment3"
+        android:name="com.example.desafiomarvelapi.TesteFragment"
+        android:label="fragment_full_image"
+        tools:layout="@layout/fragment_full_image" >
         <action
-            android:id="@+id/action_imagemFullFragment2_to_comicInfoFragment"
+            android:id="@+id/action_testeFragment3_to_comicInfoFragment"
             app:destination="@id/comicInfoFragment" />
     </fragment>
 </navigation>

@@ -18,4 +18,6 @@
     <string name="pages">Pages:</string>
     <string name="descricao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut congue erat at mi consequat, sed imperdiet ligula consequat. Nulla rutrum elit enim, id fringilla mi tempus nec. Vivamus ipsum mi, ultricies id risus eu, imperdiet tristique arcu. Duis vehicula erat ligula, vel dapibus libero lacinia sed. Sed ac dapibus mi.</string>
     <string name="register">Register</string>
+    <string name="imagem_fecha_fullsize">Imagem fecha Fullsize</string>
+    <string name="imagem_fullsize">Imagem Fullsize</string>
 </resources>

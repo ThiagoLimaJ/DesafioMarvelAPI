@@ -14,14 +14,13 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ImagemFullActivity"></activity>
         <activity
             android:name=".listadequadrinhos.view.ComicsActivity"
-            android:theme="@style/SplashScreen"></activity>
+            android:theme="@style/SplashScreen" />
         <activity android:name=".register.RegisterActivity" />
         <activity
             android:name=".login.LoginActivity"
-            android:theme="@style/Login"></activity>
+            android:theme="@style/Login" />
         <activity
             android:name=".splashscreen.SplashScreenActivity"
             android:theme="@style/SplashScreen">
